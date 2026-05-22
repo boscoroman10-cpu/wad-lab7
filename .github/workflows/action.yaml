@@ -22,9 +22,11 @@ jobs:
         run: chmod +x gradlew
 
       - name: Build with Gradle
-        run: ./gradlew build
+        # Aquí está la clave: le decimos que construya pero se salte los tests (-x test)
+        run: ./gradlew build -x test
 
       - name: Run Backend Tests
+        # Y aquí ejecuta los tests con el secreto inyectado
         env:
           MY_SECRET_KEY: ${{ secrets.MY_SECRET_KEY }}
         run: ./gradlew test
