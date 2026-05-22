@@ -1,6 +1,5 @@
 package com.upb.lab7_wad;
 
-import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
@@ -11,8 +10,6 @@ class Lab7Test {
         int result = 2 + 3;
         assertEquals(5, result);
     }
-
-    @Disabled("This test is disabled until MY_SECRET_KEY is added to GitHub secrets")
     @Test
     void environment() {
         assertEquals("ABC", System.getenv("MY_SECRET_KEY"));
